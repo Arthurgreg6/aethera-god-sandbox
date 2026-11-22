@@ -1,0 +1,17 @@
+{
+  "name": "worldbox-game",
+  "version": "1.0.0",
+  "description": "A world-building strategy game inspired by Worldbox, created with HTML5 Canvas 2D.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tinyhttp/app": "^3.0.14",
+    "jsdom": "^31.0.1"
+  }
+}

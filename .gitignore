@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Compressed downloads
+build-tools-34.0.0-linux.zip
+*.zip
+*.jar
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Heroku / deployment
+*.log
+.env
+
+# IDE
+.vscode/
+.idea/
+*.iml

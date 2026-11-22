@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Aethera — God Sandbox</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="aethera.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="1280" height="800"></canvas>
+    <canvas id="vig"></canvas>
+
+    <!-- Top HUD Bar -->
+    <div id="top" class="bar">
+      <div id="stats">
+        <span id="date">Day 1</span>
+        <span id="pop">Pop: 0</span>
+        <div id="faithwrap">
+          <div id="faithbar"><div id="faithfill" style="width:50%"></div></div>
+          <span id="faithnum">50</span>
+        </div>
+      </div>
+      <div id="btns">
+        <button class="btn" id="bSpeed">Speed 1</button>
+        <button class="btn" id="bMenu">Menu</button>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div id="ticker">Aethera — God Sandbox</div>
+
+    <!-- Info Panel -->
+    <div id="info"></div>
+
+    <!-- Dock UI -->
+    <div id="dock" class="bar">
+      <div id="tabs"></div>
+      <div id="tools"></div>
+    </div>
+
+    <!-- Load Overlay -->
+    <div id="load">
+      <div class="spinner"></div>
+      <b>Aethera</b>
+      <p>Loading art engine...</p>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+  </div>
+
+  <script src="aethera-engine.js"></script>
+  <script src="aethera-ui.js"></script>
+  <script src="src/world.js"></script>
+  <script src="src/races.js"></script>
+  <script src="src/animals.js"></script>
+  <script src="src/buildings.js"></script>
+  <script src="src/politics.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/game.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initUI();
+      if (typeof gameLoop === 'function') {
+        gameLoop();
+      } else {
+        setTimeout(() => { if (typeof gameLoop === 'function') gameLoop(); }, 100);
+      }
+      setupCanvas();
+      initializeGrid();
+      createNativeLands();
+      createInitialCreature();
+      showTab('Terrain');
+      updateHud();
+    });
+  </script>
+</body>
+</html>
